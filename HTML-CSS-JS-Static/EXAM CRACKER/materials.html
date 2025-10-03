@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Cracker - Study Materials</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        /* Only style <a> tags inside .material-item in the accordion */
+.accordion-item .material-item a {
+    color: 
+    #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Admin Controls Styles */
+.add-subsection-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 15px 0;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.add-subsection-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.upload-doc-btn {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.upload-doc-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+}
+
+.delete-doc-btn, .delete-subsection-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: all 0.2s ease;
+}
+
+.delete-doc-btn:hover, .delete-subsection-btn:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+.material-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.subsection-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.material-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: #2a2a2a;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    color: white;
+}
+
+.modal-content h2 {
+    color: #dc2626;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #dc2626;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: white;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.btn-create, .btn-upload {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+ </style>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="static/bg-image.png" style="width: 50px; height:50px; border-radius: 50%;">&nbsp;&nbsp;
+            <span>Exam Cracker</span>
+            </div>
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div class="hamburger-line" ></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            
+            <nav class="main-nav" id="mainNav" style="color: white;">
+            
+                <br>
+                <a href="home.html" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="materials.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>Materials</span>
+                </a>
+                <a href="questions.html" class="nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Questions</span>
+                </a>
+                 <a href="https://examcrackercontact.netlify.app/" class="nav-profile" id="navProfile">
+                    <i class="fas fa-phone"></i>
+                    <span i>contact</span>
+                </a>
+                <a href="profile.html" class="nav-profile" id="navProfile">
+                    <i class="fas fa-user"></i>
+                    <span id="navUsername">User</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+ <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="page-header">
+                <h1><i class="fas fa-book-open"></i> Study Materials</h1>
+                <p>Comprehensive study materials organized by subjects</p>
+            </div>
+            
+            <div class="accordion-container" id="materialsContainer">
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 32px; color: #dc2626;"></i>
+                    <p>Loading materials...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="materials.html" class="nav-item active">
+            <i class="fas fa-book"></i>
+            <span>Materials</span>
+        </a>
+        <a href="questions.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>Questions</span>
+        </a>
+        <a href="profile.html" class="nav-item profile-nav" id="profileNav">
+            <i class="fas fa-user"></i>
+            <span id="bottomUsername">User</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Exam Cracker</h4>
+                <p>Your ultimate study companion for academic success</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="materials.html">Study Materials</a></li>
+                    <li><a href="questions.html">Question Papers</a></li>
+                     <li><a href="https://examcrackercontact.netlify.app/">contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="https://examcrackercontact.netlify.app/">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Exam Cracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add Subsection Modal -->
+    <div class="modal-overlay" id="addSubsectionModal">
+        <div class="modal-content">
+            <h2>Add New Subsection</h2>
+            <p>Category: <span id="addSubsectionSubjectName"></span></p>
+            <input type="hidden" id="addSubsectionSubjectId">
+            
+            <div class="form-group">
+                <label for="subsectionNameInput">Subsection Name:</label>
+                <input type="text" id="subsectionNameInput" placeholder="Enter subsection name">
+            </div>
+            
+            <div class="form-group">
+                <label for="subsectionIconInput">Icon (FontAwesome class):</label>
+                <input type="text" id="subsectionIconInput" placeholder="fa-folder" value="fa-folder">
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn-create" onclick="createSubsection()">
+                    <i class="fas fa-check"></i> Create
+                </button>
+                <button class="btn-cancel" onclick="closeAddSubsectionModal()">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Document Modal -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-content">
+            <h2>Upload Document</h2>
+            <p>Subcategory: <span id="uploadSubsectionName"></span></p>
+            <input type="hidden" id="uploadSubsectionId">
+            
+            <div class="form-group">
+                <label for="documentNameInput">Document Name:</label>
+                <input type="text" id="documentNameInput" placeholder="Enter document name">
+            </div>
+            
+            <div class="form-group">
+                <label for="uploadMethodSelect">Upload Method:</label>
+                <select id="uploadMethodSelect" onchange="updateUploadMethodUI(this.value)">
+                    <option value="link">Paste Link</option>
+                    <option value="drive">Upload File (Google Drive)</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="urlInputGroup">
+                <label for="documentUrlInput" id="urlInputLabel">
+                    <i class="fas fa-link"></i> File URL:
+                </label>
+                <input type="text" id="documentUrlInput" placeholder="https://...">
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="btn-upload" onclick="uploadDocument()">
+                    <i class="fas fa-check"></i> Upload
+                </button>
+                <button class="btn-cancel" onclick="closeUploadModal()">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/materials.js"></script>
+    <script src="static/js/accordion.js"></script>
+</body>
+</html>

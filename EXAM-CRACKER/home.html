@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Cracker - Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="static/bg-image.png">
+    <link rel="shortcut icon" href="static/bg-image.png" type="image/png">
+    <link rel="apple-touch-icon" href="static/bg-image.png">
+</head>
+<body>
+   
+
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                 <img src="static/bg-image.png" style="width: 50px; height:50px; border-radius: 50%;">&nbsp;&nbsp;
+                <div style="display: flex; flex-direction: column;">
+                    <span>Exam Cracker</span>
+                    <span class="desktop-developer-credit">(Developed by Praveen)</span>
+                    <span id="headerUsername" style="font-size: 0.75rem; color: var(--primary-red); font-weight: 500; display: none;">User</span>
+                </div>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+            
+            <nav class="main-nav" id="mainNav" style="color: white;">
+                <!-- Developer Credit Below Logo -->
+                <div class="mobile-nav-title">
+                    <span>Developed by Praveen</span>
+                </div>
+                
+                <a href="home.html" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="materials.html" class="nav-link">
+                    <i class="fas fa-book"></i>
+                    <span>Materials</span>
+                </a>
+                <a href="questions.html" class="nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Questions</span>
+                </a>
+                <a href="https://examcrackercontact.netlify.app/" class="nav-link" target="_blank">
+                    <i class="fas fa-phone"></i>
+                    <span>contact</span>
+                </a>
+                <a href="profile.html" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    <span id="navUsername">praveen</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+                   <!-- Notification Banner -->
+
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- -nav Content -->
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="welcome-section">
+                <h1>Welcome to Exam Cracker</h1>
+                <p>Your ultimate study companion for academic success</p>
+            </div>
+            
+            <!-- Latest Upload Notification -->
+            <div id="latestUploadNotification" style="display: none; background: linear-gradient(135deg, #e63946 0%, #c1121f 100%); color: white; padding: 15px 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <h4 style="margin: 0 0 5px 0; font-size: 1rem;">
+                            <i class="fas fa-bell"></i> New File Uploaded!
+                        </h4>
+                        <p id="latestUploadText" style="margin: 0; opacity: 0.9; font-size: 0.9rem;"></p>
+                    </div>
+                    <i class="fas fa-check-circle" style="font-size: 2rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+            
+            <!-- Latest Upload Shortcut -->
+            <div id="latestUploadCard" style="display: none; margin-bottom: 20px;">
+                <div class="dashboard-card" style="border: 2px solid var(--primary-red);">
+                    <div class="card-icon" >
+                       <i> Downlaod</i> 
+
+                        <i class="fas fa-file-download"></i>
+                    </div>
+                    <h3 id="latestUploadTitle">Latest Upload</h3>
+                    <p id="latestUploadDetails"></p>
+                    <a id="latestUploadLink" href="#" download class="card-btn">
+                        <i class="fas fa-download"></i>
+                        Download Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Study Materials</h3>
+                    <p>Access comprehensive study materials for all subjects</p>
+                    <a href="materials.html" class="card-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        Browse Materials
+                    </a>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clipboard-question"></i>
+                    </div>
+                    <h3>Question Papers</h3>
+                    <p>Practice with previous year question papers and mock tests</p>
+                    <a href="questions.html" class="card-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        View Questions
+                    </a>
+                </div>
+                
+            
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="home.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="materials.html" class="nav-item">
+            <i class="fas fa-book"></i>
+            <span>Materials</span>
+        </a>
+        <a href="questions.html" class="nav-item">
+            <i class="fas fa-question-circle"></i>
+            <span>Questions</span>
+        </a>
+        <a href="profile.html" class="nav-item profile-nav" id="profileNav">
+            <i class="fas fa-user"></i>
+            <span id="bottomUsername">User</span>
+        </a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Exam Cracker</h4>
+                <p>Your ultimate study companion for academic success</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="materials.html">Study Materials</a></li>
+                    <li><a href="questions.html">Question Papers</a></li>
+                     <li><a href="https://examcrackercontact.netlify.app/">contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="https://examcrackercontact.netlify.app/">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Exam Cracker. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/upload.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+/* Upload Modal Styles */
+.upload-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-modal-content {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    border: 2px solid var(--primary-red);
+    box-shadow: 0 20px 60px rgba(220, 38, 38, 0.3);
+}
+
+.upload-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.upload-modal-header h2 {
+    color: var(--white);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.upload-modal-header i {
+    color: var(--primary-red);
+    margin-right: 0.5rem;
+}
+
+.upload-close {
+    color: var(--light-gray);
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
+}
+
+.upload-close:hover {
+    color: var(--primary-red);
+}
+
+.upload-subject-info {
+    background: rgba(220, 38, 38, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: var(--primary-red);
+    font-weight: 600;
+    text-align: center;
+}
+
+.upload-form-group {
+    margin-bottom: 1.5rem;
+}
+
+.upload-form-group label {
+    display: block;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.upload-form-group label i {
+    color: var(--primary-red);
+    margin-right: 0.5rem;
+}
+
+.upload-form-group input[type="text"],
+.upload-form-group input[type="file"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--medium-gray);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.upload-form-group input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background: var(--dark-gray);
+}
+
+.upload-form-group input[type="file"] {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.upload-form-group input[type="file"]::file-selector-button {
+    background: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background 0.3s ease;
+}
+
+.upload-form-group input[type="file"]::file-selector-button:hover {
+    background: var(--dark-red);
+}
+
+.upload-btn-submit {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3);
+}
+
+.upload-status {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.upload-status.success {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid #4caf50;
+    color: #4caf50;
+}
+
+.upload-status.error {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid #f44336;
+    color: #f44336;
+}
+
+.upload-status.info {
+    background: rgba(33, 150, 243, 0.2);
+    border: 1px solid #2196f3;
+    color: #2196f3;
+}
+
+/* Upload Icon Button */
+.upload-btn-icon {
+    transition: all 0.3s ease;
+}
+
+.upload-btn-icon:hover {
+    transform: scale(1.2);
+    color: var(--light-red) !important;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.delete-btn:hover {
+    background: rgba(244, 67, 54, 0.1);
+    transform: scale(1.1);
+}
+
+.delete-btn i {
+    font-size: 0.9rem;
+}
+
+/* Ensure uploaded items match existing style */
+.material-item.uploaded {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.material-item.uploaded:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.material-item.uploaded span {
+    flex: 1;
+    color: var(--white);
+    font-size: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .upload-modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    
+    .upload-modal-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .delete-btn {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Dynamic Subsection Styles */
+.add-subsection-icon {
+    color: var(--primary-red);
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.add-subsection-icon:hover {
+    transform: scale(1.2) rotate(90deg);
+    color: #ff1744;
+}
+
+.custom-subsection {
+    opacity: 0;
+    animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Enhanced Circular Ripple Effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.6) 0%, rgba(220, 38, 38, 0.3) 50%, rgba(220, 38, 38, 0) 100%);
+    transform: scale(0);
+    animation: ripple-animation 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    will-change: transform, opacity;
+}
+
+@keyframes ripple-animation {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Ensure modals work on all devices */
+#passwordModal,
+#subsectionModal {
+    z-index: 10001;
+}
+
+@media (max-width: 480px) {
+    .upload-modal-content {
+        width: 98%;
+        padding: 1rem;
+    }
+    
+    .upload-modal-header h2 {
+        font-size: 1rem;
+    }
+    
+    .add-subsection-icon {
+        font-size: 0.9rem;
+        margin-right: 5px;
+    }
+    
+    .upload-form-group input[type="text"],
+    .upload-form-group input[type="password"] {
+        font-size: 14px;
+        padding: 0.75rem;
+    }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "exam-cracker",
+  "version": "1.0.0",
+  "description": "Exam Cracker - Study Materials and Question Papers Platform",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "education",
+    "exam",
+    "study"
+  ],
+  "author": "Praveen",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
